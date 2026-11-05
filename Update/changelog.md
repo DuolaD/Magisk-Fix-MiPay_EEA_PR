@@ -1,5 +1,17 @@
 # 更新日志
 
+## 1.3.0 - 2026-11-05
+
+### 新增
+- 新增 LSPosed 模块 FixMiPay-RegionBypass（位于 `Temp/FixMiPay-RegionBypass`），解除较新 EEA/Global 系统对"双击电源键唤起刷卡页"的地区限制。
+- 新增 `uninstall.sh`，卸载模块时移除装入 `/data/app` 的银联组件与 MINextpay 系统更新。
+
+### 修复
+- 修复银联可信服务组件 (UPTsmService) 在 KernelSU"卸载模块"下因读不到自身 APK 而启动即崩溃的问题：开机后将其与 MINextpay 以系统应用更新形式装入 `/data/app`。
+
+### 说明
+- 刷卡灵动岛/通知需在 SU 管理器中关闭对 android.uid.system (uid 1000) 的"卸载模块"功能。
+
 ## 1.2.0 - 2026-09-02
 
 ### 修复
